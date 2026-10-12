@@ -43,14 +43,14 @@ p + p { margin-top: 12px; }
 .band :focus-visible { outline-color: #fff; }
 .band .mast { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-bottom: 28px; }
 .jump { display: flex; gap: 4px 18px; flex-wrap: wrap; font-size: 0.9375rem; }
-.jump a { text-decoration: none; padding: 10px 0; display: inline-block; }
+.jump a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
 .jump a:hover { text-decoration: underline; }
 .band h1 { font-size: clamp(1.9375rem, 1.35rem + 2.3vw, 2.875rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; max-width: 22ch; }
 .band .lead { color: #e7ebf1; margin-top: 16px; }
 .band .rule { width: 56px; height: 4px; background: var(--pen); border-radius: 2px; margin: 0 0 22px; }
 
 /* the sheets */
-.grid { display: grid; gap: 16px; padding: 24px 0 48px; }
+.grid { display: grid; gap: 16px; padding-block: 24px 48px; }
 @media (min-width: 900px) {
   .grid { grid-template-columns: minmax(0, 1fr) 360px; gap: 24px; align-items: start; }
   .aside { position: sticky; top: 24px; }
@@ -70,7 +70,7 @@ dl.facts dd { color: var(--ink); }
 @media (max-width: 479px), (min-width: 900px) { dl.facts { grid-template-columns: 1fr; row-gap: 2px; } dl.facts dd { margin-bottom: 10px; } }
 .mail { font-weight: 600; word-break: break-all; }
 
-footer { color: var(--muted); font-size: 0.9375rem; padding: 0 0 40px; }
+footer.wrap { color: var(--muted); font-size: 0.9375rem; padding-bottom: 40px; }
 footer a { color: inherit; }
 
 @media print {
