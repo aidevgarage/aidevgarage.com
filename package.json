@@ -11,7 +11,7 @@
     "check:dist": "node scripts/check-dist.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:a11y": "node scripts/check-a11y.mjs",
-    "lhci": "lhci autorun --config=lighthouserc.json"
+    "lhci": "npx --yes @lhci/cli@0.15.1 autorun --config=lighthouserc.json"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
-    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.64.0",
     "linkinator": "^8.1.0"
   }
