@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="AI Dev Garage — a small software company in Poland"
+  description="AI Dev Garage is a one-person software business in Poland. Its first product is Vital Compass, which explains health test results in plain language."
+>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="band">
+    <div class="wrap">
+      <div class="mast">
+        <p class="co">AI Dev Garage</p>
+        <nav class="jump" aria-label="On this page">
+          <a href="#what">What we build</a>
+          <a href="#contact">Contact</a>
+          <a href="#legal">Legal</a>
+          <a href="#privacy">Privacy</a>
+        </nav>
+      </div>
+      <div class="rule" aria-hidden="true"></div>
+      <h1>A small software company, building AI products for everyday life.</h1>
+      <p class="lead">AI Dev Garage is a one-person software business in Poland. Its first product is Vital Compass, which explains health test results in plain language.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap grid">
+    <div class="main-col">
+      <section class="sheet" id="who" aria-labelledby="who-h">
+        <h2 id="who-h">Who we are</h2>
+        <p>AI Dev Garage is founded and run by Dzmitry Dziokin, a software engineer who designs and builds the product. There is no team yet beyond the founder, and no outside investors.</p>
+        <p>AI Dev Garage is the trading name of Dzmitry Dziokin, a sole proprietorship registered in Poland (CEIDG). The founder is personally responsible for this site and for the product. A limited company is planned once the business has grown.</p>
+      </section>
+
+      <section class="sheet" id="what" aria-labelledby="what-h">
+        <h2 id="what-h">What we build</h2>
+        <p>One product, in development: a service that reads a lab report (a PDF or a photo) and explains each value in plain words, in the person's own language. It is advisory only. It never diagnoses or treats, and it says so on every result.</p>
+        <div class="product">
+          <a class="lockup" href="https://vitalcompass.app" aria-label="Vital Compass, opens vitalcompass.app">
+            <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4.5 7 L12 25 L19.5 7" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.2 14.2 V25" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round"/><circle cx="26.2" cy="7.4" r="3.7" fill="#FFE066"/></svg>
+            <span class="wordmark" aria-hidden="true">V<span class="i">ı</span>tal Compass</span>
+          </a>
+          <p>Your health results, explained in your language.</p>
+          <p class="status muted">In private testing. Data is stored in the EU. Vital Compass explains; your doctor decides.</p>
+          <p><a href="https://vitalcompass.app">vitalcompass.app</a></p>
+        </div>
+      </section>
+    </div>
+
+    <div class="aside">
+      <section class="sheet" id="contact" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact</h2>
+        <p><a class="mail" href="mailto:hello@aidevgarage.com">hello@aidevgarage.com</a></p>
+        <p class="muted">The founder reads and answers this address; there is no form and no chat. Users of Vital Compass write to <a href="mailto:support@vitalcompass.app">support@vitalcompass.app</a>.</p>
+      </section>
+      <section class="sheet" id="legal" aria-labelledby="legal-h">
+        <h2 id="legal-h">Legal information</h2>
+        <dl class="facts">
+          <dt>Trading as</dt><dd>AI Dev Garage</dd>
+          <dt>Operated by</dt><dd>Dzmitry Dziokin</dd>
+          <dt>Legal form</dt><dd>Sole proprietorship (jednoosobowa działalność gospodarcza), registered in CEIDG, Poland</dd>
+          <dt>Registered address</dt><dd>ul. Łamana 7 lok. 12<br />02-480 Warszawa<br />Poland</dd>
+          <dt>NIP (tax id)</dt><dd>8961614799</dd>
+          <dt>REGON</dt><dd>522325360</dd>
+          <dt>Email</dt><dd><a href="mailto:hello@aidevgarage.com">hello@aidevgarage.com</a></dd>
+        </dl>
+      </section>
+    </div>
+
+    <section class="sheet sheet-privacy" id="privacy" aria-labelledby="privacy-h">
+      <h2 id="privacy-h">Privacy</h2>
+      <p>This site sets no cookies, runs no analytics and loads nothing from third parties. It is a set of static pages served by GitHub Pages. GitHub, the hosting provider, logs the IP address of each visit for security purposes under its own <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>; AI Dev Garage does not receive or keep those logs. Nothing else is collected.</p>
+      <p>If you email us, we keep the correspondence for as long as it takes to answer and as the law requires. Vital Compass, the product, has its own <a href="https://eu.vitalcompass.app/privacy">privacy policy</a>.</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© 2026 AI Dev Garage · Vital Compass is a product of AI Dev Garage, the trading name of Dzmitry Dziokin, Poland.</p>
+  </footer>
+</Base>

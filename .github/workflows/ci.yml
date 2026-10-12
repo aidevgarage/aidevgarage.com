@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx astro check
+      - run: npm run build
+      - name: Dist check (no scripts, styles or third-party URLs)
+        run: npm run check:dist
+      - name: Link check (internal links and anchors)
+        run: npm run check:links
+      - name: Install Chromium for axe
+        run: npx playwright install --with-deps chromium
+      - name: Accessibility (axe WCAG 2.2 AA at 375 and 1280)
+        run: npm run check:a11y
+      - name: Lighthouse CI
+        run: npm run lhci

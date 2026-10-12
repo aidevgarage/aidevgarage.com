@@ -1,0 +1,83 @@
+/* Golos Text, self-hosted: the page makes no request to any other host. */
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/golos-text-latin-ext-400-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/golos-text-latin-400-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/golos-text-latin-ext-700-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/golos-text-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 800; font-display: swap; src: url(/fonts/golos-text-latin-ext-800-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Golos Text'; font-style: normal; font-weight: 800; font-display: swap; src: url(/fonts/golos-text-latin-800-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+:root {
+  --ink: #1a1d24; --ink-2: #2d323c; --muted: #4a5160;
+  --line: #dde2ea; --ground: #f3f5f8; --paper: #ffffff;
+  --pen: #2742c4; --pen-deep: #1a2f96;
+  --highlight: #ffe066; /* the product's colour: used only inside the product's own mark */
+  --font: 'Golos Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter: 16px; --measure: 62ch;
+}
+@media (min-width: 620px) { :root { --gutter: 24px; } }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--ground); }
+body { margin: 0; font-family: var(--font); font-size: 16px; line-height: 1.55; color: var(--ink); background: var(--ground); }
+h1, h2, h3, p, dl, dd, dt, ul { margin: 0; }
+a { color: var(--pen); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--pen-deep); }
+:focus-visible { outline: 3px solid var(--pen); outline-offset: 3px; border-radius: 4px; }
+.skip { position: absolute; left: var(--gutter); top: -48px; background: var(--ink); color: #fff; padding: 10px 14px; border-radius: 6px; z-index: 10; }
+.skip:focus { top: 12px; }
+.wrap { max-width: calc(1040px + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
+p + p { margin-top: 12px; }
+.lead { font-size: clamp(1.125rem, 1rem + 0.6vw, 1.3125rem); color: var(--ink-2); max-width: var(--measure); }
+.muted { color: var(--muted); }
+.co { font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; font-size: 1.25rem; }
+
+/* The product's mark as a partner page shows it: monogram 28px plus the live wordmark. */
+.lockup { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.lockup svg { width: 28px; height: 28px; flex: none; }
+.wordmark { font-weight: 700; font-size: 22px; letter-spacing: -0.015em; white-space: nowrap; line-height: 1.2; }
+.wordmark .i { position: relative; display: inline-block; line-height: 1; }
+.wordmark .i::after { content: ""; position: absolute; left: 50%; top: 0.1em; width: 0.26em; height: 0.26em; border-radius: 50%; background: var(--highlight); transform: translate(-50%, -10%); }
+
+/* the band */
+.band { background: var(--ink); color: #fff; padding: 20px 0 44px; }
+.band a { color: #fff; }
+.band :focus-visible { outline-color: #fff; }
+.band .mast { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-bottom: 28px; }
+.jump { display: flex; gap: 4px 18px; flex-wrap: wrap; font-size: 0.9375rem; }
+.jump a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.jump a:hover { text-decoration: underline; }
+.band h1 { font-size: clamp(1.9375rem, 1.35rem + 2.3vw, 2.875rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; max-width: 22ch; }
+.band .lead { color: #e7ebf1; margin-top: 16px; }
+.band .rule { width: 56px; height: 4px; background: var(--pen); border-radius: 2px; margin: 0 0 22px; }
+
+/* the sheets */
+.grid { display: grid; gap: 16px; padding-block: 24px 48px; }
+@media (min-width: 900px) {
+  /* The side column spans both rows, so Privacy follows What we build at the sheet gap. */
+  .grid { grid-template-columns: minmax(0, 1fr) 360px; gap: 16px 24px; align-items: start; }
+  .main-col { grid-column: 1; grid-row: 1; }
+  .aside { grid-column: 2; grid-row: 1 / span 2; position: sticky; top: 24px; }
+  .sheet-privacy { grid-column: 1; grid-row: 2; }
+}
+.sheet { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+@media (min-width: 620px) { .sheet { padding: 32px; } }
+.sheet + .sheet { margin-top: 16px; }
+h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+.product { margin-top: 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--ground); }
+.product .lockup { margin-bottom: 8px; }
+.product .status { margin-top: 10px; }
+
+dl.facts { display: grid; grid-template-columns: max-content 1fr; column-gap: 20px; row-gap: 10px; }
+dl.facts dt { color: var(--muted); font-size: 0.9375rem; }
+dl.facts dd { color: var(--ink); }
+@media (max-width: 479px), (min-width: 900px) { dl.facts { grid-template-columns: 1fr; row-gap: 2px; } dl.facts dd { margin-bottom: 10px; } }
+.mail { font-weight: 600; word-break: break-all; }
+
+footer.wrap { color: var(--muted); font-size: 0.9375rem; padding-bottom: 40px; }
+footer a { color: inherit; }
+
+@media print {
+  .skip { display: none !important; }
+  .band { background: #fff; color: var(--ink); }
+  .band a, .band .lead { color: var(--ink); }
+  .sheet { border-color: #999; }
+}
